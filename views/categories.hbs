@@ -1,0 +1,102 @@
+<!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Blog Categories</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">Blog Categories</li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-header">
+                 <h3 class="card-title">Blog Categories</h3>
+
+                 <div class="card-tools">
+                    <div class="input-group input-group-sm" style="width: 150px;">
+                      <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
+      
+                      <div class="input-group-append">
+                        <button type="submit" class="btn btn-default">
+                          <i class="fas fa-search"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                  <div class="col-sm-1" style="margin: 8px; width: 10px;">
+                    <a href="/addcategory"><button type="button" class="btn btn-block btn-success btn-sm">AddNew</button></a>
+                  </div>
+                  <div class="col-sm-2" style="margin: 8px; width: 10px;">
+                    <button type="button" class="btn btn-block btn-success btn-sm" style="width: 120px;" onclick="window.print()">Print Preview</button>
+                  </div>
+               </div>
+              </div>
+               
+              <!-- /.card-header -->
+              <div class="card-body">
+                <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th style="width: 10px">#</th>
+                      <th>Category</th>
+                      <th>Detail</th>
+                      <th>Author</th>
+                      <th>Date</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {{#each rows}}
+                    <tr>
+                      <td>{{this.id}}</td>
+                      <td>{{this.Category}}</td>
+                      <td>{{this.Description}}</td>
+                      <td>{{this.Author}}</td>
+                      <td>{{this.Date}}</td>
+                      <td>
+                        <div class="row">
+                             {{!-- <a href="/viewuser/{{this.id}}"><button type="button" class="btn btn-block btn-success btn-sm">View</button></a> --}}
+                          <a href="/editcategories/{{this.id}}"><button type="button" class="btn btn-block btn-success btn-sm" style="margin: 7px; width: 60px;">Edit</button></a>
+                          <a href="/categories/{{this.id}}"><button type="button" class="btn btn-block btn-success btn-sm" style="margin: 7px; width: 60px;">Delete</button></a>
+                        </div>
+                         
+                      </td>
+                    </tr>
+                    {{/each}}
+                    
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.card-body -->
+              <div class="card-footer clearfix">
+                <ul class="pagination pagination-sm m-0 float-right">
+                  <li class="page-item"><a class="page-link" href="#">&laquo;</a></li>
+                  <li class="page-item"><a class="page-link" href="#">1</a></li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item"><a class="page-link" href="#">&raquo;</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+            <!-- /.card -->

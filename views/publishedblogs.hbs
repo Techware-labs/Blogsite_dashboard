@@ -1,0 +1,69 @@
+ <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Published Blogs</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">Published Blogs</li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+        
+    <section class="content">
+      <div class="container-fluid">
+        <!-- /.row -->
+        <div class="row">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Published</h3>
+              </div>
+              <!-- ./card-header -->
+              <div class="card-body">
+                <table class="table table-bordered table-hover">
+                  <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>Author</th>
+                      <th>Date</th>
+                      <th>Status</th>
+                      <th>Title</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {{#each rows}}
+                    <tr data-widget="expandable-table" aria-expanded="false">
+                      <td>{{this.id}}</td>
+                      <td>{{this.Author}}</td>
+                      <td>{{this.Date}}</td>
+                      <td>{{this.Status}}</td>
+                      <td>{{this.Title}}</td>
+                    </tr>
+                    <tr class="expandable-body">
+                      <td colspan="5">
+                        <p>
+                        {{this.Content}}
+                        </p>
+                      </td>
+                    </tr>
+                    {{/each}}
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+        </div>
+        <!-- /.row -->
+      </div>
+      </section>
+  </div>
